@@ -53,6 +53,16 @@ public class Solution1_1 {
         return new int[0];
     }
 
+    public static int[] sum(int[] nums, int traget){
+        Map<Integer,Integer> hastable = new HashMap<>();
+        for(int i=0; i<nums.length;i++){
+            if(hastable.containsKey(traget-nums[i])){
+                return new int[]{hastable.get(traget-nums[i]),i};
+            }
+            hastable.put(nums[i],i);
+        }
+        return new int[0];
+    }
 
 
     public static void main(String[] args) {
